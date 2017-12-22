@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>
+		marshalling-xml-using-ox-mappers: Demo project for marshalling XML using O/X Mappers with Castos
+    </description>
+    
+  	<class name="com.canchitodev.example.domain.complex.Platform">   
+  		<map-to xml="Platform" />
+        <field name="name" type="string">
+            <bind-xml name="Name" node="element" />
+        </field>
+        <field name="developer" type="string">
+            <bind-xml name="Developer" node="element" />
+        </field>
+        <field name="manufacturer" type="string">
+            <bind-xml name="Manufacturer" node="element" />
+        </field>
+        <field name="releaseDate" type="string">
+            <bind-xml name="ReleaseDate" node="element" />
+        </field>
+        <field name="price" type="string">
+            <bind-xml name="Price" node="element" />
+        </field>
+        <field name="website" type="string">
+            <bind-xml name="Website" node="element" />
+        </field>
+        <field name="Games" type="com.canchitodev.example.domain.complex.Games">
+            <bind-xml name="Games" node="element" />
+        </field>
+   	</class>
+   	
+   	<class name="com.canchitodev.example.domain.complex.Games">   
+  		<map-to xml="Games" />
+        <field name="Game" type="com.canchitodev.example.domain.complex.Game" collection="arraylist">
+        	<bind-xml name="Game" node="element" />
+        </field>
+   	</class>
+   	
+   	<class name="com.canchitodev.example.domain.complex.Game">   
+  		<map-to xml="Game" />
+        <field name="name" type="string">
+            <bind-xml name="Name" node="element" />
+        </field>
+        <field name="releaseDate" type="string">
+            <bind-xml name="ReleaseDate" node="element" />
+        </field>
+        <field name="price" type="string">
+            <bind-xml name="Price" node="element" />
+        </field>
+        <field name="url" type="string">
+            <bind-xml name="URL" node="element" />
+        </field>
+        <field name="developer" type="string">
+            <bind-xml name="Developer" node="element" />
+        </field>
+        <field name="publisher" type="string">
+            <bind-xml name="Publisher" node="element" />
+        </field>
+   	</class>
+	   	
+ </mapping>

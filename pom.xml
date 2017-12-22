@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.canchitodev.example</groupId>
+	<artifactId>marshalling-xml-using-ox-mappers</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>marshalling-xml-using-ox-mappers</name>
+	<description>Demo project for marshalling XML using O/X Mappers with Castos</description>
+
+	<parent><!-- Core starter, including auto-configuration support, logging and YAML -->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent><!-- Core starter, including auto-configuration support, logging and YAML -->
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<castor.version>1.4.1</castor.version>
+		<xerces.version>2.11.0</xerces.version>
+	</properties>
+
+	<dependencies>		
+		<!-- Marshalling XML using O/X Mappers -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-oxm</artifactId>
+		</dependency>
+		<!-- Marshalling XML using O/X Mappers -->
+		
+		<!-- Castor - Data binding made easy -->
+		<dependency>
+		    <groupId>org.codehaus.castor</groupId>
+		    <artifactId>castor-xml</artifactId>
+		    <version>${castor.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.codehaus.castor</groupId>
+		  <artifactId>castor-codegen</artifactId>
+		  <version>${castor.version}</version>
+		</dependency>
+		<!-- Castor need this -->
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>${xerces.version}</version>
+		</dependency>
+		<!-- Castor - Data binding made easy -->
+		
+		<!-- Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito -->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<url>https://github.com/canchito-dev/integrate-activiti-with-spring</url>
+	<organization>
+		<name>Canchito Development</name>
+		<url>http://www.canchito-dev.com</url>
+	</organization>
+	<issueManagement>
+		<system>Canchito Development</system>
+		<url>https://github.com/canchito-dev/marshalling-xml-using-ox-mappers/issues</url>
+	</issueManagement>
+</project>

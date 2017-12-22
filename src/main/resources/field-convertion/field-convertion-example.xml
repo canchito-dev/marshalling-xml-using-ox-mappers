@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Platform>
+	<Name>Playstation 4</Name>
+	<Developer>Sony Interactive Entertainment</Developer>
+	<Manufacturer>Sony, Foxconn</Manufacturer>
+	<ReleaseDate>29/11/2013</ReleaseDate>
+	<Price>€399.99</Price>
+	<Website>http://playstation.com/ps4/</Website>
+	<Games>
+		<Game>
+			<Name>Uncharted 4: A Thief's End</Name>
+			<ReleaseDate>10/05/2016</ReleaseDate>
+			<Price>€35.90</Price>
+			<URL>https://www.unchartedthegame.com/en-us/</URL>
+			<Developer>Naughty Dog</Developer>
+			<Publisher>Sony Computer Entertainment</Publisher>
+		</Game>
+		<Game>
+			<Name>Batman: Arkham Knight</Name>
+			<ReleaseDate>23/06/2015</ReleaseDate>
+			<Price>€17.99</Price>
+			<URL>https://www.batmanarkhamknight.com/</URL>
+			<Developer>Rocksteady Studios</Developer>
+			<Publisher>Warner Bros. Interactive Entertainment</Publisher>
+		</Game>
+		<Game>
+			<Name>Wolfenstein II: The New Colossus</Name>
+			<ReleaseDate>27/10/2017</ReleaseDate>
+			<Price>€69.99</Price>
+			<URL/>
+			<Developer>MachineGames</Developer>
+			<Publisher>Bethesda Softworks</Publisher>
+		</Game>
+	</Games>
+</Platform>
