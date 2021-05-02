@@ -3,7 +3,7 @@
 
 # marshalling-xml-using-ox-mappers
 
-<p style="text-align: justify;">In this post, you will create a Spring project and use Castor XML mapping for marshalling/unmarshalling Java objects into an XML document.</p>
+<p style="text-align: justify;">In this post, you will create a Spring project and use Castor XML mapping for marshalling/unmarshalling Java objects into an XML document.</p>
 
 <h2 style="text-align: justify;">Contribute Code</h2>
 <p style="text-align: justify;">If you would like to become an active contributor to this project please follow these simple steps:</p>
@@ -22,7 +22,7 @@
  	<li>About 40 minutes</li>
  	<li>A favorite IDE. In this post, we use:Eclipse IDE for Java DevelopersVersion: Mars.2 Release (4.5.2)
 Build id: 20160218-0600</li>
- 	<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener noreferrer">JDK 7</a> or later. It can be made to work with JDK6, but it will need configuration tweaks. Please check the Spring Boot documentation</li>
+ 	<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener noreferrer">JDK 7</a> or later. It can be made to work with JDK6, but it will need configuration tweaks. Please check the Spring Boot documentation</li>
  	<li>An empty Spring project. You can follow the steps from <a href="http://canchito-dev.com/public/blog/2017/04/16/spring-initializer/" target="_blank" rel="noopener noreferrer">here</a>.</li>
 </ul>
 <h2>Introduction</h2>
@@ -34,7 +34,7 @@ Build id: 20160218-0600</li>
 <ul>
  	<li style="text-align: justify;"><code>org.exolab.castor.xml.Marshaller</code>: Worker class for converting a Java object to XML document.</li>
  	<li style="text-align: justify;"><code>org.exolab.castor.xml.Unmarshaller</code>: Worker class for converting XML document to Java object.</li>
- 	<li style="text-align: justify;"><code>org.exolab.castor.xml.XMLContext</code>: A bootstrap class used for configuration of the XML data binding framework and instantiation of the two worker objects.</li>
+ 	<li style="text-align: justify;"><code>org.exolab.castor.xml.XMLContext</code>: A bootstrap class used for configuration of the XML data binding framework and instantiation of the two worker objects.</li>
 </ul>
 <p style="text-align: justify;">There are three modes in which Castor XML can be used for marshalling/unmarshalling data to and from XML:</p>
 
@@ -48,10 +48,10 @@ Build id: 20160218-0600</li>
 
 <ul style="text-align: justify;">
  	<li style="text-align: justify;">Marshal/Unmarshal a very simple XML file composed of one root element and several child elements.</li>
- 	<li style="text-align: justify;">Marshal/Unmarshal a complex XML file composed of one root element and several child elements, but one of the child elements is a list of elements.</li>
+ 	<li style="text-align: justify;">Marshal/Unmarshal a complex XML file composed of one root element and several child elements, but one of the child elements is a list of elements.</li>
  	<li style="text-align: justify;">Marshal/Unmarshal a complex XML file, but this time using custom field handler.</li>
 </ul>
-<p style="text-align: justify;">Even though the project has three examples, we will focus on explaining the most complex example: marshalling/unmarshalling a complex XML file composed of one root element and several child elements, and one of the child elements is a list of elements. During the unmarshalling process, we will use two custom field handler.</p>
+<p style="text-align: justify;">Even though the project has three examples, we will focus on explaining the most complex example: marshalling/unmarshalling a complex XML file composed of one root element and several child elements, and one of the child elements is a list of elements. During the unmarshalling process, we will use two custom field handler.</p>
 
 <h2 style="text-align: justify;">Project's Layout</h2>
 <pre class="EnlighterJSRAW" data-enlighter-language="raw" data-enlighter-linenumbers="false" data-enlighter-theme="enlighter">src/main/java
@@ -60,8 +60,8 @@ Build id: 20160218-0600</li>
  |  +- canchitodev
  |     +- example
  |        +- MarshallingXmlUsingOxMappersApplication.java
- |        +- MarshallingXmlUsingOxMappersApplication.java
- |        +- MarshallingXmlUsingOxMappersApplication.java
+ |        +- MarshallingXmlUsingOxMappersApplication.java
+ |        +- MarshallingXmlUsingOxMappersApplication.java
  |        |
  |        +- domain
  |        |  +- basic
@@ -106,7 +106,7 @@ src/test/java
 
 <h2>Getting Started</h2>
 <p style="text-align: justify;">Once you have created an empty project and imported into your favorite IDE, it is time to modify the <code>pom.xml</code> file. If you have not created the project yet, you can follow the steps described in <a href="http://canchito-dev.com/public/blog/2017/04/16/spring-initializer/" target="_blank" rel="noopener noreferrer">here</a>.</p>
-<p style="text-align: justify;">Let's open the <code>pom.xml</code> file, and add the dependencies needed by <a href="http://castor-data-binding.github.io/castor/">Castor</a>.</p>
+<p style="text-align: justify;">Let's open the <code>pom.xml</code> file, and add the dependencies needed by <a href="http://castor-data-binding.github.io/castor/">Castor</a>.</p>
 <p style="text-align: justify;">First we add Castor's and Xerces' version, that we will be using, as a property. Notice that we will use the latest current version at the moment of writing this post.</p>
 
 <pre class="EnlighterJSRAW" data-enlighter-language="xml" data-enlighter-theme="classic">&lt;properties&gt;
@@ -150,7 +150,7 @@ src/test/java
 <p style="text-align: justify;">That's it. You have successfully included <a href="http://castor-data-binding.github.io/castor/">Castor</a> into your project.</p>
 
 <h2 style="text-align: justify;">Defining the XML</h2>
-<p style="text-align: justify;">Here is a representation of the XML file that we will be unmarshalling. You can find it at <code>src/java/resources/field-convertion</code>.</p>
+<p style="text-align: justify;">Here is a representation of the XML file that we will be unmarshalling. You can find it at <code>src/java/resources/field-convertion</code>.</p>
 
 <pre class="EnlighterJSRAW" data-enlighter-language="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;Platform&gt;
@@ -188,7 +188,7 @@ src/test/java
   &lt;/Games&gt;
 &lt;/Platform&gt;</pre>
 <h2 style="text-align: justify;">Defining the Java Objects</h2>
-<p style="text-align: justify;">As you might remember, we will focus this post on explaining how to marshal/unmarshal a complex XML file composed of one root element and several child elements, and one of the child elements is a list of elements. During the unmarshalling process, we will use two custom field handler. All of the Java object that will be used are located in package <code>com.canchitodev.example.field.handlers.domain</code>.</p>
+<p style="text-align: justify;">As you might remember, we will focus this post on explaining how to marshal/unmarshal a complex XML file composed of one root element and several child elements, and one of the child elements is a list of elements. During the unmarshalling process, we will use two custom field handler. All of the Java object that will be used are located in package <code>com.canchitodev.example.field.handlers.domain</code>.</p>
 Based on the XML, we can see that there are three objects:
 <pre class="EnlighterJSRAW" data-enlighter-language="java">public class Platform {
   
@@ -256,9 +256,9 @@ Based on the XML, we can see that there are three objects:
 }</pre>
 If you pay attention, we have created an object for each XML's element that has child elements.
 <h2 style="text-align: justify;">Defining the XML Mapping</h2>
-<p style="text-align: justify;">In order to use the XML mapping technique, we have to first define the mapping information. This is an XML document, which describes how the properties of the Java Object have to be translated into XML. However, the only contraint for the mapping file is that <a href="http://castor-data-binding.github.io/castor/">Castor</a> must unambiguously infer from it, how a given XML element/attribute has to be translated into the object model during unmarshalling.</p>
+<p style="text-align: justify;">In order to use the XML mapping technique, we have to first define the mapping information. This is an XML document, which describes how the properties of the Java Object have to be translated into XML. However, the only contraint for the mapping file is that <a href="http://castor-data-binding.github.io/castor/">Castor</a> must unambiguously infer from it, how a given XML element/attribute has to be translated into the object model during unmarshalling.</p>
 Put into simple words, the XML mapping file explains for each Java object how each of its fields have to be mapped into XML. For this, <a href="http://castor-data-binding.github.io/castor/">Castor</a> considers each field as an abstraction of an object's property. And by it, it can be accessed via public class variable or using accessor methods (setters and getters). Whenever <a href="http://castor-data-binding.github.io/castor/">Castor</a> has to handle an object or XML data which information is not in the mapping file, it will follow its default behavior, by using Java's Reflection API to introspect the Java object and determine what to do. Both methods can be simultaneously used.
-<p style="text-align: justify;"><strong>Note:</strong> <a href="http://castor-data-binding.github.io/castor/">Castor</a> can’t handle all possible mappings. In some complex cases, it may be necessary to rely on an XSL transformation in conjunction with <a href="http://castor-data-binding.github.io/castor/">Castor</a> to adapt the XML document to a more friendly format.</p>
+<p style="text-align: justify;"><strong>Note:</strong> <a href="http://castor-data-binding.github.io/castor/">Castor</a> can’t handle all possible mappings. In some complex cases, it may be necessary to rely on an XSL transformation in conjunction with <a href="http://castor-data-binding.github.io/castor/">Castor</a> to adapt the XML document to a more friendly format.</p>
 
 <pre class="EnlighterJSRAW" data-enlighter-language="xml">&lt;?xml version="1.0"?&gt;
 &lt;!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd"&gt;
@@ -326,10 +326,10 @@ Put into simple words, the XML mapping file explains for each Java object how ea
 <p style="text-align: justify;">When using <a href="http://castor-data-binding.github.io/castor/">Castor</a>'s XML framework, each XML element has to map to a Java class. Everytime <a href="http://castor-data-binding.github.io/castor/">Castor</a> marshals an object, it will:</p>
 
 <ul style="text-align: justify;">
- 	<li style="text-align: justify;">if present, use the mapping information to find the name of the element to create; or</li>
+ 	<li style="text-align: justify;">if present, use the mapping information to find the name of the element to create; or</li>
  	<li style="text-align: justify;">create a name using the name of the class, which is its default behavior</li>
 </ul>
-<p style="text-align: justify;">Afterwards, the fields' information from the mapping file is used to decide the way a particular object's property has to converted into into one only one of the following:</p>
+<p style="text-align: justify;">Afterwards, the fields' information from the mapping file is used to decide the way a particular object's property has to converted into into one only one of the following:</p>
 
 <ul style="text-align: justify;">
  	<li style="text-align: justify;">an attribute</li>
@@ -337,19 +337,19 @@ Put into simple words, the XML mapping file explains for each Java object how ea
  	<li style="text-align: justify;">text content</li>
  	<li style="text-align: justify;">nothing, as we can choose to ignore a particular field</li>
 </ul>
-<p style="text-align: justify;">If no inforamtion for a given class in found in the mapping XML file, by default, <a href="http://castor-data-binding.github.io/castor/">Castor</a> will introspect the class and apply a set of predefined rules to guess the fields and marshal them. The predefined rules are as follows:</p>
+<p style="text-align: justify;">If no inforamtion for a given class in found in the mapping XML file, by default, <a href="http://castor-data-binding.github.io/castor/">Castor</a> will introspect the class and apply a set of predefined rules to guess the fields and marshal them. The predefined rules are as follows:</p>
 
 <ul style="text-align: justify;">
  	<li style="text-align: justify;">All primitive types, including the primitive type wrappers (Boolean, Short, etc…) are marshalled as attributes.</li>
  	<li style="text-align: justify;">All other objects are marshalled as elements with either text content or element content.</li>
 </ul>
 <h2 style="text-align: justify;">Unmarshalling Behavior</h2>
-<p style="text-align: justify;">During the unmarshalling process, if <a href="http://castor-data-binding.github.io/castor/">Castor</a> finds an element, it will try to use the information found in the XML mapping file to determine which object to instantiate. When no mapping information is found, <a href="http://castor-data-binding.github.io/castor/">Castor</a> will try to guess the name of the class to instantiate, by using the element's name. Afterwards, it will use the field information of the mapping file to handle the content of the element.</p>
-<p style="text-align: justify;">If no inforamtion for a given class in found in the mapping XML file, by default, <a href="http://castor-data-binding.github.io/castor/">Castor</a> will introspect the class in order to find out if there any method of the form getXxxYyy()/setXxxYyy(&lt;type&gt; x). This accessor will be associated with XML element/attribute named ‘xxx-yyy’.</p>
+<p style="text-align: justify;">During the unmarshalling process, if <a href="http://castor-data-binding.github.io/castor/">Castor</a> finds an element, it will try to use the information found in the XML mapping file to determine which object to instantiate. When no mapping information is found, <a href="http://castor-data-binding.github.io/castor/">Castor</a> will try to guess the name of the class to instantiate, by using the element's name. Afterwards, it will use the field information of the mapping file to handle the content of the element.</p>
+<p style="text-align: justify;">If no inforamtion for a given class in found in the mapping XML file, by default, <a href="http://castor-data-binding.github.io/castor/">Castor</a> will introspect the class in order to find out if there any method of the form getXxxYyy()/setXxxYyy(&lt;type&gt; x). This accessor will be associated with XML element/attribute named ‘xxx-yyy’.</p>
 <p style="text-align: justify;">Before continuing, it is important to understand the <a href="http://castor-data-binding.github.io/castor/">Castor</a>'s marshalling/unmarshalling behavior. <a href="http://castor-data-binding.github.io/castor/">Castor</a>'s XML framework is very well documented. I recommend reading the following links: (1) <a href="https://castor-data-binding.github.io/castor/reference-guide/reference/xml/xml-framework.html">XML Framework</a> and (2) <a href="https://castor-data-binding.github.io/castor/reference-guide/reference/xml/xml-mapping.html">XML Mapping</a>.</p>
 
 <h2 style="text-align: justify;">Defining the Marshalling/Unmarshalling Class</h2>
-First we define the class for handling marshalling/unmarshalling of the XML. Notice that this class has both methods.
+First we define the class for handling marshalling/unmarshalling of the XML. Notice that this class has both methods.
 <pre class="EnlighterJSRAW" data-enlighter-language="java">public class XMLMarshalUtil {
   
   private Marshaller marshaller;
@@ -439,7 +439,7 @@ public class XMLMarshalBean {
     }
 }</pre>
 <h2 style="text-align: justify;">Custom Field Handlers</h2>
-<p style="text-align: justify;">There are occassions in which we need to deal with data format that are not nativably support by <a href="http://castor-data-binding.github.io/castor/">Castor</a>, or manipulate fields to get the desired output without changing the object model. To deal with this, <a href="http://castor-data-binding.github.io/castor/">Castor</a> has several interesting interfaces. For this post, we will focus on <code>org.exolab.castor.mapping.GeneralizedFieldHandler</code> interface. We have implemented two field handlers: (1) for converting a date from English date format to Spanish date format, and (2) for converting the price form Euro (€) to US Dollars (US$). Both field handlers can be found in package <code>com.canchitodev.example.field.handlers</code>.</p>
+<p style="text-align: justify;">There are occassions in which we need to deal with data format that are not nativably support by <a href="http://castor-data-binding.github.io/castor/">Castor</a>, or manipulate fields to get the desired output without changing the object model. To deal with this, <a href="http://castor-data-binding.github.io/castor/">Castor</a> has several interesting interfaces. For this post, we will focus on <code>org.exolab.castor.mapping.GeneralizedFieldHandler</code> interface. We have implemented two field handlers: (1) for converting a date from English date format to Spanish date format, and (2) for converting the price form Euro (€) to US Dollars (US$). Both field handlers can be found in package <code>com.canchitodev.example.field.handlers</code>.</p>
 Here is the class for manipulating dates:
 <pre class="EnlighterJSRAW" data-enlighter-language="java">/**
  * The GeneralizedFieldHandler for the Date class
