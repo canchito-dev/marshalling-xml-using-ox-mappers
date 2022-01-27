@@ -23,7 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<castor.version>1.4.1</castor.version>
-		<xerces.version>2.11.0</xerces.version>
+		<xerces.version>2.12.2</xerces.version>
 	</properties>
 
 	<dependencies>		
